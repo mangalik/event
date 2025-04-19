@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wedding Events</title>
+    <link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="Photos/icon.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        background-color: #6e0404;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #481616;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #4A90E2;
+        margin-bottom: 30px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+    }
+    
+    .event {
+        margin: 25px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event h2 {
+        cursor: pointer;
+        background-color: #4A90E2;
+        color: white;
+        padding: 15px 20px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s;
+        font-family: serif;
+        font-size: 1.3rem;
+    }
+    
+    .event h2:hover {
+        background-color: #357ABD;
+    }
+    
+    .event-details {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #4A90E2;
+        display: none;
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .event-details p {
+        margin: 10px 0;
+    }
+    
+    .event-details a {
+        color: #4A90E2;
+        text-decoration: none;
+    }
+    
+    .event-details a:hover {
+        text-decoration: underline;
+    }
+    
+    .event-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .event-image:hover {
+        transform: scale(1.02);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .fas {
+        transition: transform 0.3s;
+    }
+    
+    @media (max-width: 600px) {
+        .container {
+            padding: 15px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        .event h2 {
+            font-size: 1.1rem;
+            padding: 12px 15px;
+        }
+    }
+    
+    /* Music control button styles */
+    #music-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(74, 144, 226, 0.8);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    #music-control:hover {
+        background-color: rgba(53, 122, 189, 0.9);
+        transform: scale(1.05);
+    }
+    
+    .pulse-animation {
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Priya & Shashikant's Wedding Events</h1>
+
+        <div class="event" id="haldi">
+            <h2 onclick="toggleDetails('haldiDetails', this)" aria-expanded="false" aria-controls="haldiDetails">
+                Haldi Ceremony <i class="fas fa-chevron-down"></i>
+            </h2>
+            <div class="event-details" id="haldiDetails">
+                <img src="image/haldi.jpg" alt="Haldi ceremony with turmeric paste" class="event-image">
+                <p><strong>Date:</strong> April 28, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM</p>
+                <p><strong>Venue:</strong> Nurpur, Nathnagar</p>
+            </div>
+        </div>
+        
+        <div class="event" id="bachelor">
+            <h2 onclick="toggleDetails('bachelorDetails', this)" aria-expanded="false" aria-controls="bachelorDetails">
+                Baraat <i class="fas fa-chevron-down"></i>
+            </h2>
+            <div class="event-details" id="bachelorDetails">
+                <img src="image/Barrat.jpg" alt="Groom with friends at bachelor party" class="event-image">
+                <p><strong>Date:</strong> April 30, 2025</p>
+                <p><strong>Time:</strong> 8:00 PM</p>
+                <p><strong>Venue:</strong> Nurpur, Nathnagar to Sultanganj</p>
+            </div>
+        </div>
+
+        <div class="event" id="wedding">
+            <h2 onclick="toggleDetails('weddingDetails', this)" aria-expanded="false" aria-controls="weddingDetails">
+                Wedding Ceremony <i class="fas fa-chevron-down"></i>
+            </h2>
+            <div class="event-details" id="weddingDetails">
+                <img src="image/wedding.jpg" alt="Bride and groom at wedding ceremony" class="event-image">
+                <p><strong>Date:</strong> April 30, 2025</p>
+                <p><strong>Time:</strong> 11:00 PM</p>
+                <p><strong>Venue:</strong> Maharishi Mehi Memorial Hall cum Ramuka Marriage Hall, Upper Road, Sultanganj</p>
+            </div>
+        </div>
+
+        <div class="event" id="reception">
+            <h2 onclick="toggleDetails('receptionDetails', this)" aria-expanded="false" aria-controls="receptionDetails">
+                Reception <i class="fas fa-chevron-down"></i>
+            </h2>
+            <div class="event-details" id="receptionDetails">
+                <img src="image/reception.jpg" alt="Bride and groom at reception" class="event-image">
+                <p><strong>Date:</strong> May 2, 2025</p>
+                <p><strong>Time:</strong> 7:00 PM</p>
+                <p><strong>Venue:</strong> <a href="https://maps.app.goo.gl/DmyVtf6kmZKPxWpF7?g_st=aw" target="_blank">Welcome Palace, Nathnagar, Bhagalpur</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music control button -->
+    <button id="music-control" class="pulse-animation" title="Toggle Music">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <!-- Background music audio element -->
+    <audio id="background-music" loop>
+        <source src="audio/event.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+    function toggleDetails(eventId, headerElement) {
+        var eventDetails = document.getElementById(eventId);
+        var icon = headerElement.querySelector('.fas');
+        var isExpanded = headerElement.getAttribute('aria-expanded') === 'true';
+    
+        if (isExpanded) {
+            eventDetails.style.display = "none";
+            icon.style.transform = "rotate(0deg)";
+            headerElement.setAttribute('aria-expanded', 'false');
+        } else {
+            eventDetails.style.display = "block";
+            icon.style.transform = "rotate(180deg)";
+            headerElement.setAttribute('aria-expanded', 'true');
+        }
+    }
+    
+    // Close all details when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.matches('.event h2, .event h2 *')) {
+            var allDetails = document.querySelectorAll('.event-details');
+            var allHeaders = document.querySelectorAll('.event h2');
+            var allIcons = document.querySelectorAll('.event h2 .fas');
+            
+            allDetails.forEach(function(detail) {
+                detail.style.display = "none";
+            });
+            
+            allHeaders.forEach(function(header) {
+                header.setAttribute('aria-expanded', 'false');
+            });
+            
+            allIcons.forEach(function(icon) {
+                icon.style.transform = "rotate(0deg)";
+            });
+        }
+    });
+
+    // Music control functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const musicControl = document.getElementById('music-control');
+        const music = document.getElementById('background-music');
+        
+        // Function to toggle music play/pause
+        function toggleMusic() {
+            if (music.paused) {
+                music.play()
+                    .then(() => {
+                        musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        musicControl.classList.remove('pulse-animation');
+                    })
+                    .catch(err => {
+                        console.log('Playback failed:', err);
+                        musicControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    });
+            } else {
+                music.pause();
+                musicControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                musicControl.classList.add('pulse-animation');
+            }
+        }
+        
+        // Try to autoplay music
+        window.addEventListener('load', function() {
+            // Small delay to ensure everything is loaded
+            setTimeout(() => {
+                music.play()
+                    .then(() => {
+                        musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        musicControl.classList.remove('pulse-animation');
+                    })
+                    .catch(err => {
+                        console.log('Autoplay prevented:', err);
+                        // Keep the button pulsing to encourage user interaction
+                    });
+            }, 1000);
+        });
+        
+        // Click event for music button
+        musicControl.addEventListener('click', toggleMusic);
+
+        // Alternative approach: start music on first user interaction with the page
+        function onFirstInteraction() {
+            if (music.paused) {
+                music.play()
+                    .then(() => {
+                        musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        musicControl.classList.remove('pulse-animation');
+                    })
+                    .catch(err => {
+                        console.log('Playback failed:', err);
+                    });
+            }
+            
+            // Remove these event listeners after first interaction
+            document.removeEventListener('click', onFirstInteraction);
+            document.removeEventListener('touchstart', onFirstInteraction);
+            document.removeEventListener('keydown', onFirstInteraction);
+        }
+        
+        // Add event listeners for first interaction
+        document.addEventListener('click', onFirstInteraction);
+        document.addEventListener('touchstart', onFirstInteraction);
+        document.addEventListener('keydown', onFirstInteraction);
+    });
+    </script>
+</body>
+</html>
